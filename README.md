@@ -10,7 +10,7 @@ Group Members:
 - `helper_scripts` contains python files used in the data acquisition and preprocessing steps, where:
   * `api-json.py`, `api-parser.py`, and `md-parser.py` were used to pull new samples from the GitHub API and parse MD textual content.
   * `file_rename_and_links.py` was used to properly name the acquired input README's to match the file naming convention required by the READMEClassifier model (during machine learning model replication and feature extraction).
-- `READMEClassifier_Model_Replication.ipynb` is the PySpark script (implemented in Databricks x AWS cluster) to replicate/recreate the READMEClassifier performances using the SVC, RandomForest, and LogisticRegression Classifiation algorithms, native to SciKitLearn.
+- `READMEClassifier_Model_Replication.ipynb` is the PySpark script (implemented in Databricks x AWS cluster) to replicate/recreate the READMEClassifier performances (on the original dataset) using the SVC, RandomForest, and LogisticRegression Classifiation algorithms, native to SciKitLearn. The model replication on the original dataset resulted in the exact same per-model score. Replicating the papers existing models also enabled us to perform experiments using the original models and methodology on the new and new + old datasets.
 - `ENSF612_CODE_Group10.ipynb` is the PySpark program (implemented in U of C TALC cluster), used to extend the READMECLassifier using: Preprocessing, MLPipeline + GridSearch, on an optimized and hyperparameter tuned SVC (Support Vector Classifier - linear).
 
 This is a multiclassification, multilabel problem, that we have broken into 8 binary classification problems (1 for each of the possible target lables/classes). Reference to the original research paper:
